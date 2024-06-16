@@ -36,7 +36,7 @@ const Navbar = () => {
          
         <ul className="list-none flex flex-col justify-end items-center flex-1 text-white">
           {navLinks.map((nav, index) => (
-            <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px ${index===navLinks.length -1 ? 'mr-0' : 'mb-5'}]`}>
+            <li key={nav.id} className={`font-poppins font-normal cursor-pointer text-[16px ${index===navLinks.length -1 ? 'mr-0' : 'mb-6'}]`}>
               <a href={`#${nav.id}`} onClick={() => setShowMenu(false)}>{nav.title}</a>
             </li>
           ))}
