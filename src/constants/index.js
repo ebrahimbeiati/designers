@@ -84,22 +84,36 @@ export const feedback = [
     img: people03,
   },
 ];
-
-export const stats = [
+export const projects = [
   {
-    id: "stats-1",
-    title: "User Active",
-    value: "3800+",
+    title: "Project 1",
+    description: "Description of Project 1",
+    image: "path/to/project1.jpg",
   },
   {
-    id: "stats-2",
-    title: "Trusted by Company",
-    value: "230+",
+    title: "Project 2",
+    description: "Description of Project 2",
+    image: "path/to/project2.jpg",
   },
   {
-    id: "stats-3",
-    title: "Transaction",
-    value: "$230M+",
+    title: "Project 3",
+    description: "Description of Project 3",
+    image: "path/to/project3.jpg",
+  },
+  {
+    title: "Project 4",
+    description: "Description of Project 4",
+    image: "path/to/project4.jpg",
+  },
+  {
+    title: "Project 5",
+    description: "Description of Project 5",
+    image: "path/to/project5.jpg",
+  },
+  {
+    title: "Project 6",
+    description: "Description of Project 6",
+    image: "path/to/project6.jpg",
   },
 ];
 
