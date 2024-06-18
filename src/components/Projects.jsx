@@ -1,12 +1,10 @@
 import React from "react";
 import { projects } from "../constants";
-import ProjectCard from '../components/Projectcard'
+import ProjectCard from "../components/ProjectCard";
+
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="bg-gradient-to-b from-black-400 to-gray-600 min-h-screen py-20"
-    >
+    <section id="projects" className="bg-gray-900 min-h-screen py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-white">
           Projects

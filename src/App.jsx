@@ -13,22 +13,23 @@ import CardDeal from "./components/CardDeal";
 
 
 const App = () => (
-  <div className="bg-gray-400 w-full overflow-hidden">
+  <div className="w-full overflow-hidden bg-sky-950">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
         <Navbar />
       </div>
     </div>
 
-    <div className={`bg-gray-500 ${styles.flexStart}`}>
+    <div
+      className={`"contact-sec sec-pad bg-gradient-to-br from-blue-400 via-blue-700 to-blue-500 min-h-screen" ${styles.flexStart}`}
+    >
       <div className={`${styles.boxWidth}`}>
         <Hero />
       </div>
     </div>
 
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+    <div className={`bg-gray-900 `}>
       <div className={`${styles.boxWidth}`}>
-      
         <AboutUs />
         <Team />
         <CardDeal />
@@ -36,8 +37,7 @@ const App = () => (
         <Projects />
         <Services />
         <Contact />
-        <Footer />
-   
+        <Footer/>
       </div>
     </div>
   </div>

@@ -1,113 +1,116 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiLocationMarker, HiPhone, HiOutlineMail } from "react-icons/hi";
+import { BiSend } from "react-icons/bi";
 
-const Contact = () => {
+const ContactPage = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted with:", form);
+    // Add form submission logic here
+  };
+
   return (
-    <section className="bg-gradient-to-b from-black-400 to-gray-600 min-h-screen py-20 ">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white">Contact Us</h2>
-            <p className="mt-2 text-gray-100">Get in touch with us today!</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-gray-800">
-                Contact Information
-              </h3>
-              <ul className="space-y-4">
-                <li className="flex items-center">
-                  <HiLocationMarker className="w-6 h-6 mr-3 text-blue-500" />
-                  <span className="text-gray-700">
-                    91, Tehran, Iran
-                  </span>
-                </li>
-                <li className="flex items-center">
-                  <HiPhone className="w-6 h-6 mr-3 text-green-500" />
-                  <span className="text-gray-700">
-                    <a href="tel:08510004495" className="font-semibold">
-                      0255000XXXX
-                    </a>
-                    ,{" "}
-                    <a href="tel:08510005495" className="font-semibold">
-                      0251600XXXX
-                    </a>
-                  </span>
-                </li>
-                <li className="flex items-center">
-                  <HiOutlineMail className="w-6 h-6 mr-3 text-red-500" />
-                  <span className="text-gray-700">
-                    <a
-                      href="mailto:pardeepkumar4bjp@gmail.com"
-                      className="font-semibold"
-                    >
-                      webdesignanddev2@gmail.com
-                    </a>
-                  </span>
-                </li>
-              </ul>
+    <section className="bg-gradient-to-br from-blue-400 via-blue-700 to-blue-500 text-white py-20 min-h-screen">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+        <div className="md:w-1/2 text-center md:text-left">
+          <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-xl mb-8">
+            We're here to assist you. Reach out to us using the form or contact
+            details below.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="w-full h-12 px-4 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
             </div>
-
-            {/* Contact Form */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-gray-800">
-                Send Us a Message
-              </h3>
-              <form>
-                <div className="grid grid-cols-1 gap-4">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    className="h-12 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    className="h-12 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="h-12 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    className="h-12 px-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required
-                  />
-                  <textarea
-                    name="message"
-                    rows="4"
-                    placeholder="Your Message"
-                    className="h-32 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required
-                  ></textarea>
-                  <button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
+            <div>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="w-full h-12 px-4 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="Your Phone"
+                className="w-full h-12 px-4 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+            <div className="col-span-2">
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows="4"
+                placeholder="Your Message..."
+                className="w-full px-4 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className="inline-flex items-center justify-center w-full md:w-auto h-12 px-6 mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Send Message <BiSend className="ml-2" />
+          </button>
+        </div>
+        <div className="md:w-1/2 mt-12 md:mt-16 m-2">
+          <div className="bg-white text-gray-800 rounded-lg shadow-md p-6">
+            <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
+            <div className="flex items-center mb-4">
+              <HiLocationMarker className="w-6 h-6 mr-3" />
+              <p>123 Main Street, Cityville, State, 12345</p>
+            </div>
+            <div className="flex items-center mb-4">
+              <HiPhone className="w-6 h-6 mr-3" />
+              <p>
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+              </p>
+            </div>
+            <div className="flex items-center mb-4">
+              <HiOutlineMail className="w-6 h-6 mr-3" />
+              <p>
+                <a href="mailto:contact@example.com">contact@example.com</a>
+              </p>
             </div>
           </div>
         </div>
-
-        {/* Footer */}
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default ContactPage;

@@ -4,11 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --black-gradient: linear-gradient(
     144.39deg,
     #ffffff -278.56%,
-    #6d6d6d -78.47%,
+    #4a4848 -78.47%,
     #11101d 91.61%
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
@@ -29,21 +30,21 @@
     #33bbcf 100%
   );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
 
-.bg-blue-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
-    #7de7eb 29.82%,
-    #5ce1e6 51.94%,
-    #33bbcf 90.29%
-  );
+.bg-blue-gradient {background: linear-gradient(
+  187.81deg,
+  #cde45d -13.27%,
+  #b0dd5b -81.24%,
+  #8bda59 16.19%,
+  #67d656 89.82%,
+  #45d353 81.94%,
+  #22c951 99.29%
+);
+
 }
 
 .bg-black-gradient {
@@ -67,7 +68,7 @@
 .bg-gray-gradient {
   background: linear-gradient(
     153.47deg,
-    rgba(255, 255, 255, 0) -341.94%,
+    rgba(60, 58, 58, 0) -341.94%,
     #14101d 95.11%
   );
 }
@@ -130,11 +131,40 @@
 }
 
 .pink__gradient {
-  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  background: linear-gradient(90deg, #b006ad 0%, #fc67fa 100%);
   filter: blur(900px);
 }
 
 .white__gradient {
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
+}
+/* Add these styles in your index.css or App.css */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }
