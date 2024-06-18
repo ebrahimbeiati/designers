@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <section className="bg-gradient-to-br from-blue-400 via-blue-700 to-blue-500 text-white py-20 px-6">
+    <section className="bg-gradient-to-br from-blue-400 via-blue-700 to-blue-500 text-white py-20 px-6 w-full flex flex-col">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">About Us</h2>

@@ -29,7 +29,7 @@ const App = () => (
     </div>
 
     <div className={`bg-gray-900 `}>
-      <div className={`${styles.boxWidth}`}>
+      <div className="w-full">
         <AboutUs />
         <Team />
         <CardDeal />
@@ -37,7 +37,7 @@ const App = () => (
         <Projects />
         <Services />
         <Contact />
-        <Footer/>
+        <Footer />
       </div>
     </div>
   </div>
