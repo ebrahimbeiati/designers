@@ -25,7 +25,7 @@ const ContactPage = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-400 via-blue-700 to-blue-500 text-white py-20 min-h-screen">
+    <section className="bg-gradient-to-br from-black-800 to-blue-500 text-white py-20 min-h-screen">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>

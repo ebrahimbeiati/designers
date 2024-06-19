@@ -1,8 +1,82 @@
 import React from "react";
+import aboutImage from "../assets/about.png"; // Update the path to where your image is located
+
+const Card = ({ id, icon, title, description, imageUrl }) => (
+  <>
+    <input type="radio" name="slide" id={id} className="hidden" />
+    <label htmlFor={id} className="card-label relative">
+      <div className="card-row flex items-start text-white">
+        <div className="card-icon bg-gray-800 rounded-full w-16 h-16 flex items-center justify-center m-2 p-4 ">
+          {icon}
+        </div>
+        <div className="card-description flex flex-col justify-center opacity-0 transform translate-y-8 transition-opacity transition-transform duration-300 ease-in-out delay-150">
+          <h2 className="uppercase font-bold">{title}</h2>
+          <p className="text-gray-400 pt-1">{description}</p>
+        </div>
+      </div>
+    </label>
+    <style jsx>{`
+      .card-label {
+        width: 7rem;
+        margin: 0 0.5rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 1rem;
+        transition: width 1s ease-in-out;
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+        background-image: url(${imageUrl});
+      }
+      input:checked + label {
+        width: 37.5rem;
+        height: 27rem;
+      }
+      input:checked + label .card-description {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    `}</style>
+  </>
+);
 
 const AboutUs = () => {
+  const cards = [
+    {
+      id: "c1",
+      icon: "1",
+      title: "Winter",
+      description:
+        "lorem lorem lorem loremloremloremloremem lorem loremloremloremloremem lorem loremloremloremloremem loremloremloremlorem lore",
+      imageUrl:
+        "https://images.unsplash.com/photo-1702933017536-44e01bff1111?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDU5OTUzMTR8&ixlib=rb-4.0.3&q=85",
+    },
+    {
+      id: "c2",
+      icon: "2",
+      title: "Digital Technology",
+      description: "lorem lorem loremloremlorm lorem",
+      imageUrl:
+        "https://images.unsplash.com/photo-1702933017536-44e01bff1111?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDU5OTUzMTR8&ixlib=rb-4.0.3&q=85",
+    },
+    {
+      id: "c3",
+      icon: "3",
+      title: "Globalization",
+      description: "lorem lorem loremloremlore lorem",
+      imageUrl:
+        "https://images.unsplash.com/photo-1702933017536-44e01bff1111?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDU5OTUzMTR8&ixlib=rb-4.0.3&q=85",
+    },
+    {
+      id: "c4",
+      icon: "4",
+      title: "New Technologies",
+      description: "lorem lorem lorelorem",
+      imageUrl: aboutImage,
+    },
+  ];
+
   return (
-    <section className="bg-gradient-to-br from-blue-400 via-blue-700 to-blue-500 text-white py-20 px-6 w-full flex flex-col">
+    <section className="bg-gradient-to-br from-gray-900 to-blue-300 text-white py-20 px-6 w-full flex flex-col items-center">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">About Us</h2>
@@ -13,110 +87,12 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-semibold mb-6">Our Story</h3>
-          <p className="text-lg max-w-3xl mx-auto">
-            Founded by a group of passionate web developers and designers,
-            WebDesignAndDev started with a simple goal: to provide top-notch web
-            solutions that cater to the unique needs of each client. With years
-            of experience in the industry, our team combines creativity with
-            technical expertise to deliver websites that stand out in the
-            digital landscape.
-          </p>
-        </div>
-
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-semibold mb-6">Our Approach</h3>
-          <ul className="list-none">
-            {[
-              {
-                step: "1. Consultation:",
-                description:
-                  "We begin by understanding your business, goals, and target audience. This helps us tailor our solutions to meet your specific needs.",
-              },
-              {
-                step: "2. Design:",
-                description:
-                  "Our creative team designs a unique, user-friendly website that aligns with your brand and captivates your audience.",
-              },
-              {
-                step: "3. Development:",
-                description:
-                  "Using the latest technologies, our developers build a robust, responsive website that performs flawlessly.",
-              },
-              {
-                step: "4. Launch:",
-                description:
-                  "We test extensively to ensure your site is ready for launch, then we make it live and accessible to the world.",
-              },
-              {
-                step: "5. Support:",
-                description:
-                  "We provide continuous support and updates to keep your site running optimally and securely.",
-              },
-            ].map((approach, index) => (
-              <li key={index} className="mb-4">
-                <span className="font-bold">{approach.step}</span>{" "}
-                {approach.description}
-              </li>
+        <div id="card-wrapper" className="w-full flex justify-center">
+          <div className="card-container flex">
+            {cards.map((card) => (
+              <Card key={card.id} {...card} />
             ))}
-          </ul>
-        </div>
-
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-semibold mb-6">Why Choose Us?</h3>
-          <ul className="list-none">
-            {[
-              {
-                reason: "Experience:",
-                description:
-                  "With years of industry experience, we have the knowledge and skills to deliver exceptional web solutions.",
-              },
-              {
-                reason: "Quality:",
-                description:
-                  "We are committed to excellence, ensuring every project meets our high standards of quality and performance.",
-              },
-              {
-                reason: "Client-Centric:",
-                description:
-                  "We prioritize our clients' needs, working closely with you to achieve your vision.",
-              },
-              {
-                reason: "Innovation:",
-                description:
-                  "We stay ahead of industry trends, incorporating the latest technologies and design principles into our work.",
-              },
-              {
-                reason: "Reliability:",
-                description:
-                  "We deliver projects on time and within budget, providing reliable and professional service.",
-              },
-            ].map((reason, index) => (
-              <li key={index} className="mb-4">
-                <span className="font-bold">{reason.reason}</span>{" "}
-                {reason.description}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="text-center">
-          <h3 className="text-3xl font-semibold mb-6">
-            Join Us on Your Digital Journey
-          </h3>
-          <p className="text-lg max-w-3xl mx-auto mb-8">
-            Whether you're looking to create a new website from scratch or
-            revamp an existing one, WebDesignAndDev is here to help. Let's
-            collaborate to bring your vision to life and achieve your digital
-            goals. Contact us today to get started!
-          </p>
-          <a
-            href="#contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full font-semibold transition-colors duration-300 ease-in-out"
-          >
-            Contact Us
-          </a>
+          </div>
         </div>
       </div>
     </section>
