@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const ProjectCard = ({ project }) => {
   return (
@@ -13,7 +13,9 @@ const ProjectCard = ({ project }) => {
           <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
           <p className="text-gray-200 mb-4">{project.description}</p>
           <a
-            href={project.link}
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-700 font-semibold"
           >
             View Project
@@ -22,6 +24,15 @@ const ProjectCard = ({ project }) => {
       </div>
     </div>
   );
+};
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ProjectCard;
