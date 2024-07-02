@@ -1,4 +1,3 @@
-import React from "react";
 import aboutImage from "../assets/about.png"; // Update the path to where your image is located
 
 const Card = ({ id, icon, title, description, imageUrl }) => (

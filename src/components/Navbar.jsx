@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { close, logo, menu } from "../assets";
-import { navLinks } from "../constants";
+import { navLinks } from "../constants/index.js";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
