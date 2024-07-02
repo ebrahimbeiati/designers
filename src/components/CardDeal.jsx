@@ -17,8 +17,12 @@ const CardDeal = () => (
       <Button styles={`mt-10`} />
     </div>
 
-    <div className={layout.sectionImg}>
-      <img src={card} alt="billing" className="w-[100%] h-[100%]" />
+    <div className={`${layout.sectionImg} mt-10 md:mt-0`}>
+      <img
+        src={card}
+        alt="billing"
+        className="w-full md:w-[70%] h-auto object-cover transition-transform duration-300 transform hover:scale-105"
+      />
     </div>
   </section>
 );

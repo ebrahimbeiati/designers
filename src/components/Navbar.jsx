@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { close, logo, menu } from "../assets";
-import { navLinks } from "../constants/index.js";
+import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar ">
-      <img src={logo} alt="logo" className="w-[124px] h-[32px]" />
+    <nav className="w-full flex py-6 justify-between items-center navbar p-8 ">
+      <img src={logo} alt="logo" className="w-[80px] h-[80px] rounded-full" />
 
       {/* Desktop Menu */}
       <ul className="list-none sm:flex hidden justify-end  items-center flex-1 text-sky-300">
@@ -34,7 +34,7 @@ const Navbar = () => {
         <div
           className={`${
             showMenu ? "flex" : "hidden"
-          } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar bg-gradient-to-br from-blue-600 to-orange-900 shadow-lg transform transition-transform duration-300 hover:from-gray-600 hover:to-blue-900 hover:scale-105`}
+          } p-6 absolute top-24 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar bg-gradient-to-br from-blue-600 to-orange-900 shadow-lg transform transition-transform duration-300 hover:from-gray-600 hover:to-blue-900 hover:scale-105`}
         >
           <ul className="list-none flex flex-col justify-end items-center flex-1 text-white">
             {navLinks.map((nav, index) => (

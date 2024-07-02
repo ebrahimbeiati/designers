@@ -65,38 +65,38 @@ export const features = [
       "A balance transfer credit card can save you a lot of money in interest charges.",
   },
 ];
-
 export const feedback = [
   {
     id: "feedback-1",
     content:
-      "این سایت واقعاً عالی است! همیشه به موقع و دقیق به سوالاتم پاسخ داده شده است. طراحی سایت هم بسیار کاربرپسند و جذاب است. از خدمات شما بسیار راضی هستم و به دوستانم نیز پیشنهاد کرده‌ام.👍🏻😍",
-    name: "هرمان جنسن",
-    title: "موسس و رهبر",
+      "This website is really great! My questions have always been answered promptly and accurately. The website design is also very user-friendly and attractive. I am very satisfied with your services and have recommended it to my friends. 👍🏻😍",
+    name: "Jenidi",
+    title: "Founder",
     img: people01,
   },
   {
     id: "feedback-2",
     content:
-      "من به تازگی با این سایت آشنا شدم و از کیفیت محتوای ارائه شده بسیار خوشم آمده است. اطلاعات جامع و مفید هستند و کمک بزرگی به من کرده‌اند. از تیم پشتیبانی نیز نهایت تشکر را دارم که همیشه پاسخگو هستند.🌹🌹👌🏻",
-    name: "استیو مارک",
-    title: "موسس و رهبر",
+      "I recently got to know this site and I am very impressed with the quality of the content provided. The information is comprehensive and useful, and it has been a great help to me. I also extend my sincere thanks to the support team who are always responsive. 🌹🌹👌🏻",
+    name: "Moradi",
+    title: "Designer",
     img: people02,
   },
   {
     id: "feedback-3",
     content:
-      "این سایت یکی از بهترین منابع آنلاین است که تا به حال دیده‌ام. مطالب به‌روز و کاربردی هستند و استفاده از سایت بسیار راحت است. پشتیبانی عالی و تجربه کاربری فوق‌العاده‌ای دارم. پیشنهاد می‌کنم همه از این سایت استفاده کنند.😍",
-    name: "کن گالاگر",
-    title: "موسس و رهبر",
+      "This site is one of the best online resources I have ever seen. The content is up-to-date and practical, and using the site is very easy. The support is excellent, and I have an amazing user experience. I recommend everyone to use this site. 😍",
+    name: "Golmohammadi",
+    title: "Graphic designer",
     img: people03,
   },
 ];
+
 export const projects = [
   {
     title: "Project 1",
     description: "Description of Project 1",
-    image: "/Project1.png", // Corrected to 'image'
+    image: "/public/Project1.png", // Corrected to 'image'
     href: "https://foodielove24.netlify.app/",
   },
   {
