@@ -1,4 +1,4 @@
-import aboutImage from "../assets/about.png"; // Update the path to where your image is located
+import aboutImage from "../assets/about.png";
 
 const Card = ({ id, icon, title, description, imageUrl }) => (
   <>
@@ -61,36 +61,36 @@ const AboutUs = () => {
     {
       id: "c1",
       icon: "1",
-      title: "Winter",
+      title: "",
       description:
-        "ما یک تیم حرفه‌ای و مجرب در زمینه طراحی وب‌سایت، طراحی لوگو و طراحی کارت ویزیت هستیم. با بهره‌گیری از جدیدترین تکنولوژی‌ها و رویکردهای خلاقانه، هدف ما ارائه خدمات با کیفیت و منحصر به فرد به مشتریان عزیزمان است.",
+        "We are a professional and experienced team in website design, logo design, and business card design. Using the latest technologies and creative approaches, our goal is to provide high-quality and unique services to our valued customers.",
       imageUrl:
         "https://images.unsplash.com/photo-1702933017536-44e01bff1111?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDU5OTUzMTR8&ixlib=rb-4.0.3&q=85",
     },
     {
       id: "c2",
       icon: "2",
-      title: "طراحی وب‌سایت",
+      title: "Website Design",
       description:
-        "ایجاد وب‌سایت‌های واکنش‌گرا و کاربرپسند که به راحتی در تمامی دستگاه‌ها نمایش داده می‌شوند.",
+        "Creating responsive and user-friendly websites that display seamlessly on all devices.",
       imageUrl:
         "https://images.unsplash.com/photo-1702933017536-44e01bff1111?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDU5OTUzMTR8&ixlib=rb-4.0.3&q=85",
     },
     {
       id: "c3",
       icon: "3",
-      title: "طراحی لوگو",
+      title: "Logo Design",
       description:
-        "طراحی لوگوهای منحصر به فرد و خلاقانه که هویت برند شما را به بهترین شکل ممکن نمایش می‌دهد.",
+        "Designing unique and creative logos that best represent your brand identity.",
       imageUrl:
         "https://images.unsplash.com/photo-1702933017536-44e01bff1111?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDU5OTUzMTR8&ixlib=rb-4.0.3&q=85",
     },
     {
       id: "c4",
       icon: "4",
-      title: "طراحی کارت ویزیت",
+      title: "Business Card Design",
       description:
-        "طراحی کارت‌های ویزیت حرفه‌ای که تأثیری ماندگار در ذهن مخاطبان شما به جا می‌گذارد.",
+        "Designing professional business cards that leave a lasting impression on your audience.",
       imageUrl: aboutImage,
     },
   ];
@@ -104,9 +104,12 @@ const AboutUs = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">About Us</h2>
           <p className="text-xl max-w-2xl mx-auto">
-            At <span className="font-semibold">WebDesignAndDev</span>, we
-            believe in the power of innovative design and cutting-edge
-            technology to transform your ideas into a digital reality.
+            At <span className="font-semibold">WebDesignAndDev</span>, we not
+            only design sleek and modern websites, but with advanced SEO
+            strategies, we will take your brands to the pinnacle of success.
+            Moreover, the logos and business cards designed by us with
+            precision, passion, and according to your preferences, introduce
+            your unique identity to a world of beauty and grandeur.
           </p>
         </div>
 
@@ -121,6 +124,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      <div></div>
     </section>
   );
 };
